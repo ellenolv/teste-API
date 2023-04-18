@@ -5,18 +5,20 @@
   </div>
   <div class="row m-3">
     <div class="col">
-      <img src="https://images.dog.ceo/breeds/weimaraner/n02092339_7918.jpg" alt="imagem de cachorro" width="200px" class="shadow rounded">
+      <img [src]="dog.message" alt="imagem de cachorro" width="200px" class="shadow rounded">
     </div>
   </div>
   <div class="row m-3">
     <div class="col">
-      weimaraner
+      <span *ngFor="let name of getName()"> <!--diretiva for que funciona para html-->
+          {{name | titlecase}} <!-- formatar apenas no html -> pipe -> passar primeira letra para uppercase -->
+      </span>
     </div>
   </div>
   <div class="row m-3">
     <div class="col">
-      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-secondary" (click)="loadDog()">Secondary</button>
     </div>
-    <p> teste 123</p>
+
   </div>
 </div>
